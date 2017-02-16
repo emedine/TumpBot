@@ -83,7 +83,7 @@ boolean resetTick = false;
 int charSpeed = 6;
 int sylbSpeed = 6;
 
-int resetSpeed = 5000; /// 10000; // nice interval
+int resetSpeed = 5000; /// 1000; // nice interval 
 
 boolean isFirst = false;
 
@@ -239,9 +239,9 @@ void drawText() {
       ///*
       try{
         /// if we do this it's sending all the **
-        String twt = spokenText.substring(0,139);
+        String twt = nameArray.get(tweetCount) + " " +  spokenText.substring(0,139);
         /// test to make sure we're not doing the tweet stub
-        curTweet = tweetArray.get(tweetCount).substring(0,130);
+        // curTweet = tweetArray.get(tweetCount).substring(0,130);
         if(curTweet != "tweet stub"){
            doGifExport(twt);
         }
@@ -791,7 +791,7 @@ void initTypewriter(String txt) {
 
 //////// add tweets to array //////////////
 
-void addTweet(String tweet, String date, String user) {
+void addTweet(String tweet, String user) {
   // text(tweet, 200,200);
   try {
     
@@ -800,8 +800,8 @@ void addTweet(String tweet, String date, String user) {
     /// if it's not there, add it and send to twitter bot
     String nu = trim(user);
     /// maybe purge if we're over a certain limit?
-    tweetArray.add(nu + " " + tweet + "********");
-    nameArray.add("" + user);
+    tweetArray.add(tweet + "********");
+    nameArray.add("" + nu);
 
   } 
   catch(Exception e) {

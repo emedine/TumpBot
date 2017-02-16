@@ -83,8 +83,7 @@
         } else {
 
           procElem = Processing.getInstanceById('sketch');
-          // procElem.addTweet(tString, "n", uString);
-          procElem.addTweet(tString, "n", "RT " + uString + " says ");
+          procElem.addTweet(tString, "RT " + uString + " says ");
           console.log("from: " + uString + " says: " + tString);
           if (!procElem) {
              
@@ -211,12 +210,10 @@
       can1.setAttribute('width', '400')
       can1.setAttribute('height', '300');
       can1.id = "foregroundImage";
-      // can1.style.width ="1024px";
-      // can1.style.height ="768px";
-      /// document.body.appendChild(can1);   
+      
       var ctx1 = can1.getContext('2d');
 
-      ctx1.drawImage(src, 0, 0 ); //// why for is this scaled down when I copy
+      ctx1.drawImage(src, 0, 0 ); 
 
       var can2 = document.createElement('canvas');
       can2.setAttribute('width', '400')
