@@ -165,8 +165,8 @@ void setup() {
   CharTimer.start();
   
   //// add default first tweet
-  tweetArray.add("tweet stub");
-  nameArray.add("user stub");
+  tweetArray.add("TrumpBot Online");
+  nameArray.add("TrumpBot checking ROM");
 }
 
 void draw() {
@@ -239,10 +239,11 @@ void drawText() {
       ///*
       try{
         /// if we do this it's sending all the **
-        String twt = nameArray.get(tweetCount) + " " +  spokenText.substring(0,139);
+        String twt = nameArray.get(tweetCount) + " " +  spokenText.substring(0,140);
         /// test to make sure we're not doing the tweet stub
         // curTweet = tweetArray.get(tweetCount).substring(0,130);
-        if(curTweet != "tweet stub"){
+        if(curTweet != "tweet stub" || curTweet != "user stub"){
+          twt = twt.substring(0,140);
            doGifExport(twt);
         }
 
